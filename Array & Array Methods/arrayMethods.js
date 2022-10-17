@@ -1,4 +1,10 @@
 var array = [];
+let methodsArray =['push','pop','includes','join','indexOf','reverse','shift','unshift','fill','sort','slice'];
+document.addEventListener("DOMContentLoaded", function(){
+    for(let i=0; i< methodsArray.length; i++){
+       document.getElementById("option").innerHTML += '<option >' + methodsArray[i] + '</option>';
+    }
+});
 function changeArray(){
     var selectedOption = document.getElementById("option");
     var textValue = document.getElementById("value");
@@ -30,7 +36,9 @@ function changeArray(){
        array =  array.sort();
 
     }else if(selectedOption.value == "slice"){
-        array =  array.slice(document.getElementById("firstIndex").value, document.getElementById("secoundIndex").value);
+        let start = document.getElementById("firstIndex").value;
+        let end = document.getElementById("secoundIndex").value;
+        document.getElementById("bool").innerHTML =  '<br>The <code>slice()</code> method returns a shallow copy of a portion of an array into a new array <br> Output: <code>['+array.slice(start,end)+'] </code>';
  
      }
     document.getElementById("arr").innerHTML = array;
