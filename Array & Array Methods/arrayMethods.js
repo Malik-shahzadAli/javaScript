@@ -46,6 +46,7 @@ function changeArray(){
 function changeArrayMethod(){
     document.getElementById("firstIndex").style.display = 'none';
     document.getElementById("secoundIndex").style.display = 'none';
+    document.getElementById("value").style.display = 'inline';
     var selectedOption = document.getElementById("option");
     let makeDisable = false;
     let text=""
@@ -55,8 +56,9 @@ function changeArrayMethod(){
     text=`Sort only work on the Characters and sort data on the base of First 
          Character Code So Don't use this method on Numbers`
     }else if(selectedOption.value == "slice"){
-        document.getElementById("firstIndex").style.display = 'block';
-        document.getElementById("secoundIndex").style.display = 'block';
+        document.getElementById("firstIndex").style.display = 'inline';
+        document.getElementById("secoundIndex").style.display = 'inline';
+        document.getElementById("value").style.display = 'none';
     }
     document.getElementById("sortDescription").innerHTML = text;
     document.getElementById("value").disabled = makeDisable;
